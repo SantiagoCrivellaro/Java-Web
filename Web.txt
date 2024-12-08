@@ -1,0 +1,172 @@
+El protocolo http es un estandar de comunicacion utilizado en la web para transferir datos entre un cliente ( como un navegador ) y un servidor
+
+Como Funciona :
+
+Solicitud ( Request )
+
+El cliente envia una solicitud al servidor
+
+Contiene : 
+
+Metodo HTTP ( GET,POST,PUT,DELETE)
+URL ( Direccion del recurso solicitado )
+Encabezados ( informacion adicional, como tipo de contenido o autenticacion )
+Cuerpo ( opcional, con datos para enviar, como formulario)
+
+2 Respuesta ( Response )
+
+El servidor procesa la solicitud y responde
+Contiene :
+Codigo de estado ( indica como salio todo, 200,404,500)
+Encabezados ( metadatos sobre la respuesta, como tipode contenido)
+cuerpo ( el contenido solicitado, como una pagina html o datos json)
+
+Metodos HTTP mas comunes :
+
+GET = Solicita un recurso del servidor
+
+POST = Envia datos al servidor para que los procese
+
+PUT = Actualiza un recurso existente o lo crea si no existe
+
+DELETE = Solicita eliminar un recurso.
+
+
+CODIGOS DE ESTADO HTTP ( Response status codes)
+
+2xx (exito)
+3xx (redireccion)
+4xx(error del cliente)
+5xx (error del servidor)
+
+
+Una Api ( Application Programming interface ) es un conjunto de reglas y definiciones que permite
+a dos aplicaciones comunicarse entre si, es una "puerta" que expone funcionalidades o datos de un sistema
+para que otros puedan usarlos.
+
+intermediario = conecta un cliente con un servidor o sistema back end
+abstraccion = esconde la complejidad
+estandarizacion = utiliza protocolos como HTTP y formatos como JSON para la comunicacion
+
+TIPOS DE APIS
+
+Apis REST :
+
+basados en el protoclo http y principios rest
+usa metodos get,post,put,delete
+
+Apis SOAP :
+
+mas estructurasdas
+ideales para aplicaciones empresariales
+
+APIs GraphQL :
+permiten al cliente especificar exactamente que datos necesita
+
+Apis internas vs externas :
+
+internas : para comunicacion dentro de un sistema
+externas : compartidas con desarrolladores externos para integrar servicios
+
+si necesitamos consumir algo grafico, lo consume el front end.
+si necesitamos consumir datos, lo consume el back end.
+
+Cuando el front end hace una peticion el back end responde un json
+eso, el front end puede manipularlo y ponerle estilos.
+
+Para conectar front end y back end :
+
+el back end debe exponer endpoints para hacer las operaciones
+el front hace las peticiones y luego las manipula ( mostrar,etc)
+
+No es obligatorio usar una api rest para la comunicacion, tambien se puede
+graphql para consultas mas flexibles
+websockets para comunicacion en tiempo real
+etc
+
+pero se usa rest por que aprovecha los metodos https, que lo hace mas simple.
+
+
+Servidores web :
+
+Un servidor es un software que recibe, procesa y responde a las solicitudes de los clientes a traves del protocolos HTTP o HTTPS.
+Su Funcion principal es entregar paginas web ( html, css, js, imagenes ) al navegador del usuario.
+
+Tipos de servidores web :
+
+1 Servidores HTTP estaticos : entregan archivos sin modificar ( html, css, imagenes )
+2 Servidores de Aplicacion dinamicas : Generan contenido dinamico ( PHP, node.js, java con spring boot )
+
+Principales Servidores web :
+
+Apache
+Nginx
+IIS
+LiteSpeed
+Tomcat
+
+Como funciona un servidor web :
+
+Peticion : El navegador envia una solicitud HTTP al servidor.
+
+Procesaamiento : el servidor busca el archivo o genera contenido dinamico
+
+Repuesta : Devuelve una respuesta http con el contenido
+
+
+Tomcat es el servidor embebido en Spring Boot, cuando ejecutas una app spring boot, se levanta un servidor tomcat.
+
+
+JSP ( JavaServer Pages ) y JSF ( JavaServer Faces ) Son tecnologias de java para el desarrollo de aplicaciones web dinamicas
+
+JSP es una tecnologia que permite crear paginas web dinamicas mezclando HTML, CSS y codigo java en un mismo archivo, su proposito principal
+es generar contenido dinamico en el lado del servidor antes de enviar la respuesta
+
+Mezcla HTML Y java : puedes escribir HTML y, entre etiquetas especiales (<% %> ) insertar codigo java
+
+Corre en el servidor : el servidor traduce el archivo JSP  aun servlet antes de enviar la pagina al navegador
+
+
+permite escribir paginas dinamicas con solo HTML y algo de java
+
+
+JSF es un framework de java para crear interfaces web basadas en componentes reutilizables. Su enfoque principal 
+es facilitar la creacion de aplicaciones web siguiendo el patron MVC
+
+Basado en componentes : Formularios, botones, tablas
+
+Arquitectura mvc : separa la logica de negocio ( modelo ), la interfaz de usuario ( vista ) y la logica de control ( controlador )
+
+
+
+Un Servlet es un programa java que se ejecuta en un servidor web para procesar solicitudes http y generar respuestas dinamicas.
+Los ServLet son la base sobre la que se construyrn JSP y JSF
+
+Como funciona un servlet
+
+cliente envia una solicitud http
+
+el servidor recibe la solicitud y la pasa al Servlet correspondiente
+
+El servlet procesa la solicitud, accede a db y genera una respuesta
+
+el servidor devuelve la resputa http al cliente
+
+
+JSP se ejecuta en el servidor
+
+se ejecuta en el servidor, el servidor lo traduce a un servlet, este servlet se encarga de procesar el codigo JSP y genera HTML puro, ahi se envia al navegador
+
+JSF
+
+el cliente accede a una url
+
+faceServlet interpreta la solicitud
+
+FaceServlet carga los componentes de la vista ( botones, formularios, etc, )
+
+Accede a los Managed Beans para ejecutar la logica de la app
+
+crea la pagina html
+
+el navegador recibe el html.
